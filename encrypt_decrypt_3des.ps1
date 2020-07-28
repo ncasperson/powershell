@@ -4,13 +4,9 @@
 # Created by Nathaniel Casperson nathaniel.casperson@gmail.com
 ###############################################################
 
-#####################
-#[Reflection.Assembly]::LoadWithPartialName("System.Security")
-#####################
-
 Function Protect-String-3DES($String, $Passphrase, $InitVector) {
     $Key = [Text.Encoding]::UTF8.GetBytes($Passphrase)
-    $IV = [Text.Encoding]::UTF8.GetBytes($InitVector)
+    $IV  = [Text.Encoding]::UTF8.GetBytes($InitVector)
             
     $cryptoProvider = New-Object System.Security.Cryptography.TripleDESCryptoServiceProvider
     $memoryStream = New-Object IO.MemoryStream    
@@ -27,7 +23,7 @@ Function Protect-String-3DES($String, $Passphrase, $InitVector) {
     if($arrayOutput) {
         return $result
     } else {
-        Write-Output "This is our encrypted string "
+        Write-Output "This is our encrypted string: "
         return [Convert]::ToBase64String($result)
     }    
 } # end of function
@@ -52,6 +48,5 @@ Function Unprotect-String-3DES($Encrypted, $Passphrase, $InitVector) {
     $cryptoProvider.Clear()   
 } # end of function
 
-
-Protect-String-3DES "What you talkin' about Willis?" "My_Shibboleth_2010_12_31" "31427207"
-Unprotect-String-3DES "UBvVKwXo24JeF45BQx5jEvKNDFjaNl+Kf3Avxt1iiLI=" "My_Shibboleth_2010_12_31" "31427207"
+Protect-String-3DES "What you talkin' about Willis?" "My_Shibboleth_2010_12_31" "01234567"
+Unprotect-String-3DES "+fznzeBc8L737N2vzFr9V94/W5Y/aibkZbQqXwNQ+N8=" "My_Shibboleth_2010_12_31" "01234567"
