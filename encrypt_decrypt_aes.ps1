@@ -4,9 +4,6 @@
 # Created by Nathaniel Casperson nathaniel.casperson@gmail.com
 ###############################################################
 
-
-
-
 Function Protect-String-AES ($String, $Passphrase, $InitVector){
     $Key = [Text.Encoding]::UTF8.GetBytes($Passphrase)
     $IV  = [Text.Encoding]::UTF8.GetBytes($InitVector)
