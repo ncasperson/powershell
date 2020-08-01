@@ -1,7 +1,7 @@
 ###############################################################
 # Decrypt or Encrypt Script - 3DES
 #
-# Created by Nathaniel Casperson nathaniel.casperson@gmail.com
+# Nathaniel Casperson nathaniel.casperson@gmail.com
 ###############################################################
 
 Function Protect-String-3DES($String, $Passphrase, $InitVector) {

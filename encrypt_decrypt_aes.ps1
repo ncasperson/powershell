@@ -1,7 +1,7 @@
 ###############################################################
 # Decrypt or Encrypt Script - AES
 #
-# Created by Nathaniel Casperson nathaniel.casperson@gmail.com
+# Nathaniel Casperson nathaniel.casperson@gmail.com
 ###############################################################
 
 Function Protect-String-AES ($String, $Passphrase, $InitVector){
