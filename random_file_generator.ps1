@@ -1,4 +1,4 @@
-$bytes = 1KB
+$bytes = 10MB
 $filename = "test.bin"
 $foldername = "$($env:TEMP)"
 
